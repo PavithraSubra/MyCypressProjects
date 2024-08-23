@@ -1,17 +1,26 @@
 /// <reference types ="Cypress"/>
 
 describe('template spec', () => {
-  it('Assert URL', () => {
-    cy.visit('https://example.com')
-    cy.url().should('contain', 'example.com')
+  beforeEach(() => {
+    cy.visit('https://www.prismcloudinc.com/services')
+  })
+  it('Assert URL', () => {   
+    cy.url().should('contain', 'prismcloudinc')
   })
   it('Assert Title', () => {
-    cy.visit('https://example.com')
-    cy.title().should('contain', 'Example Domain')
+    //cy.visit('https://www.prismcloudinc.com/services')
+    cy.title().should('contain', 'Services')
   })
-  it('Assert Title', () => {
-    cy.visit('https://example.com')
+  it('Assert Element', () => {
+    //cy.visit('https://www.prismcloudinc.com/services')
     cy.get('h1').should('be.visible')
-    cy.get('p').should('be.visible')
+  })
+
+  it('Reload and logs', () => {
+   // cy.visit('https://www.prismcloudinc.com/services')
+    cy.log('Before reload')
+    cy.reload()
+    cy.log('After reload')
+ 
   })
 })
