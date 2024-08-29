@@ -2,23 +2,35 @@
 
 describe('forms, buttons & checkbox', () => {
   it('submit and assert forms ', () => {
-    //Load the form
+    //Load the form - Practice with sample website
     cy.visit('https://practice-automation.com/form-fields/')
-//   cy.visit('https://meet.google.com/landing?hs=197&authuser=0&pli=1')
- //   cy.get('[id="pum_popup_title_674"]').should('be.visible')
+
+
     // Fill the form
     setTimeout(800)
+    // Enter username
     cy.get('#name-input').type('ABC')
-    //cy.get('input[fdprocessedid="2ep73"]').type('ABC')
+    
+    //enter password
     cy.contains('Password').type('ABC')
-    cy.contains('Water').click()
-     cy.contains('Red').click()
-    cy.get('#email').type('abc@test.com')
-    cy.get('#message').type('Hello It finally works!')
-    //cy.get('#submit-btn').click()
-    cy.contains('Submit').click()
-    //Assert form details
 
+    //Select water from the checkbox list
+    cy.contains('Water').click()
+
+    //Select Red from the checkbox list
+     cy.contains('Red').click()
+    
+     // Enter email id
+    cy.get('#email').type('abc@test.com')
+
+    //Enter comments
+    cy.get('#message').type('Hello It finally works!')
+
+    //Click on Submit
+    cy.contains('Submit').click()
+
+    //Assert form details
+    // Check for the form submission response - ALert box with a message
     cy.on('window:alert', (alertBox)=> {
       expect(alertBox).to.contains('Message received!')
     })
