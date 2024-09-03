@@ -1,3 +1,5 @@
+/// <reference types ="Cypress"/>
+
 describe('template spec', () => {
   beforeEach(() => {
     cy.visit('https://practice-automation.com/modals/')
@@ -14,8 +16,8 @@ describe('template spec', () => {
     cy.get('#formModal').should('be.visible').click()
     cy.wait(500)
     cy.get('#pum_popup_title_674').contains('Modal Containing A Form').should('be.visible')
-    cy.get('#g1051-name').should('be.visible').should('be.visible').type('Pavi')
-    cy.get('#g1051-email').should('be.visible').should('be.visible').type('Pavi@abc.com')
+    cy.get('#g1051-name').should('be.visible').type('Pavi')
+    cy.get('#g1051-email').should('be.visible').type('Pavi@abc.com')
     cy.get('.pushbutton-wide').should('be.visible').click()
   })
 })
