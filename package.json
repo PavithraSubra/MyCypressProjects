@@ -4,8 +4,8 @@
   "description": "My First Cypress project",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/cypress",
-    "cypresstest": "npm run test -- --spec \"cypress/e2e/"
+    "test": "node_modules\\.bin\\cypress run",
+    "cypresstest": "npm run test --"
   },
   "keywords": [],
   "author": "",

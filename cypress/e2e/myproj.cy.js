@@ -28,7 +28,6 @@ describe('template spec', () => {
         cy.get('#contact-first-name').should('be.visible').type('Pavithra')
         cy.get('#contact-last-name').should('be.visible').type('Subramanian')
         cy.get('#contact-email').should('be.visible').type('pavithra.subramanian@abc.com')
-       // cy.get('.text-field').eq(2).should('be.visible').type('pavithra.subramanian@abc.com')
        // cy.get('.button-secondary').should('be.visible').click()
        
     })    

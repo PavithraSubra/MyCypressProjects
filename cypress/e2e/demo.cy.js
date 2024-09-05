@@ -2,22 +2,20 @@
 
 describe('template spec', () => {
   beforeEach(() => {
-    cy.visit('https://www.prismcloudinc.com/services')
+    //cy.visit('https://www.prismcloudinc.com/services')
+    cy.visit('http://example.cypress.io')
   })
   it('Assert URL', () => {   
-    cy.url().should('contain', 'prismcloudinc')
+    cy.url().should('contain', 'cypress')
   })
   it('Assert Title', () => {
-    //cy.visit('https://www.prismcloudinc.com/services')
-    cy.title().should('contain', 'Services')
+    cy.title().should('contain', 'Kitchen Sink')
   })
   it('Assert Element', () => {
-    //cy.visit('https://www.prismcloudinc.com/services')
     cy.get('h1').should('be.visible')
   })
 
-  it('Reload and logs', () => {
-   // cy.visit('https://www.prismcloudinc.com/services')
+  it('Reload and logs', () => { 
     cy.log('Before reload')
     cy.reload()
     cy.log('After reload')
