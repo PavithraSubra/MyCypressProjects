@@ -1,9 +1,12 @@
 /// <reference types ="Cypress"/>
 
-describe('template spec', () => {
+describe('Demo project', () => {
   beforeEach(() => {
     //cy.visit('https://www.prismcloudinc.com/services')
+    cy.log('Before start')
+
     cy.visit('http://example.cypress.io')
+    cy.log('After start')
   })
   it('Assert URL', () => {   
     cy.url().should('contain', 'cypress')
