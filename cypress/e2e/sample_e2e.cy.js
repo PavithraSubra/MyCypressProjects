@@ -31,7 +31,7 @@ describe('Web and Mobile - Browser tests', () => {
       it('Assert mobile test', () => {   
         
         cy.viewport('iphone-6');
-        cy.viewport(720,1280)
+        //cy.viewport(720,1280)
         cy.visit('https://www.prismcloudinc.com')
         cy.url().should('contain', 'prismcloudinc')
         cy.contains("We create digital solutions.")
