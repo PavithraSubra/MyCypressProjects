@@ -30,33 +30,19 @@ describe('Web and Mobile - Browser tests', () => {
     context('Run the test on Mobile Browser ', () => {
       it('Assert mobile test', () => {   
         
-        cy.viewport('iphone-6');
-        //cy.viewport(720,1280)
+        cy.viewport('iphone-x');
         cy.visit('https://www.prismcloudinc.com')
         cy.url().should('contain', 'prismcloudinc')
         cy.contains("We create digital solutions.")
         
-        //Home - Title
-        cy.get('.menu-button > img').should('be.visible')            
-        
-
-        //CLick on Start Today
-        cy.get('.home-hero-text-wrap > .button-wrap > .button-primary > .primary-button-text').should('be.visible').click()
-
-
-        //Contact us
-        cy.contains("Let's talk about your next project.").should('be.visible')
-        cy.contains("Get in touch with us")
-        cy.get('#contact-first-name').should('be.visible').type('Pavithra')
-        cy.get('#contact-last-name').should('be.visible').type('Subramanian')
-        cy.get('#contact-email').should('be.visible').type('pavithra.subramanian@abc.com')
-
-
         //Menu button - Home
         cy.get('.menu-button').should('be.visible').click()
         cy.get('.nav-menu-2 > [href="/"]').should('contain','Home').click()
         cy.contains("We create digital solutions.")
 
+        //CLick on Start Today
+        cy.get('.home-hero-text-wrap > .button-wrap > .button-primary > .primary-button-text').should('be.visible').click()
+        cy.contains("Let's talk about your next project.").should('be.visible')
 
         //Menu button - Services
         cy.get('.menu-button').should('be.visible').click()
@@ -72,8 +58,13 @@ describe('Web and Mobile - Browser tests', () => {
         //Menu Button - CONTACT US
         cy.get('.menu-button').should('be.visible').click()
         cy.get('.button-small-inv').should('be.visible').click()
+ 
+        //Contact us
         cy.contains("Let's talk about your next project.").should('be.visible')
-
+        cy.contains("Get in touch with us")
+        cy.get('#contact-first-name').should('be.visible').type('Pavithra')
+        cy.get('#contact-last-name').should('be.visible').type('Subramanian')
+        cy.get('#contact-email').should('be.visible').type('pavithra.subramanian@abc.com')
       })    
     })
 
