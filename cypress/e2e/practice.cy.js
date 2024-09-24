@@ -17,7 +17,6 @@ describe('Web and Mobile - Browser tests', () => {
         cy.get('#delay').wait(15000).should('be.visible')
         cy.contains('Liftoff!').should('be.visible')
 
-
       })
     })
 
