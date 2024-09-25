@@ -4,7 +4,7 @@
   "description": "My First Cypress project",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules\\.bin\\cypress run --browser chrome,edge,firefox",
+    "test": "node_modules\\.bin\\cypress run",
     "cypresstest": "npm run test --"
   },
   "keywords": [],
